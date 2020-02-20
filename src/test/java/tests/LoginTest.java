@@ -10,8 +10,15 @@ public class LoginTest extends BaseTest {
     @Test
     public void negativeLoginTest() {
         user
-            .login("a@b.c", "P@ssword123")
-            .validatePageHeader(
-                "Don't miss your next opportunity. Sign in to stay updated on your professional world.");
+                .auth()
+                .login("a@b.c", "P@ssword123")
+                .validatePageHeader("Don't miss your next opportunity. Sign in to stay updated on your professional world.");
+    }
+
+    @Test
+    public void successfulLogin() {
+        user
+                .auth()
+                .login("a@b.c", "P@ssword123");
     }
 }

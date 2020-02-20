@@ -10,11 +10,20 @@ public class SearchTest extends BaseTest {
 
     @Before
     public void before() {
-        user.login("", "");
+        user
+                .auth()
+                .login("linkedin.tst.yanina@gmail.com", "Mykola123");
     }
 
     @Test
     public void searchBySearchTermTest() {
-
+        user
+                .validatePageTitle("")
+                .homePage()
+                .searchFor("hr");
+        user
+                .validatePageTitle("")
+                .searchPage()
+                .verifyEachResultContains("hr");
     }
 }
