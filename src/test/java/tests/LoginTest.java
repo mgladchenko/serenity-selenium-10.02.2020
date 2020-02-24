@@ -15,10 +15,4 @@ public class LoginTest extends BaseTest {
                 .validatePageHeader("Don't miss your next opportunity. Sign in to stay updated on your professional world.");
     }
 
-    @Test
-    public void successfulLogin() {
-        user
-                .auth()
-                .login("a@b.c", "P@ssword123");
-    }
 }

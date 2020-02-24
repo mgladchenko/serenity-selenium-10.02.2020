@@ -12,17 +12,17 @@ public class SearchTest extends BaseTest {
     public void before() {
         user
                 .auth()
-                .login("linkedin.tst.yanina@gmail.com", "Mykola123");
+                .login("linkedin.tst.yanina@gmail.com", "Test123!");
     }
 
     @Test
     public void searchBySearchTermTest() {
         user
-                .validatePageTitle("")
+                .validatePageTitle("LinkedIn")
                 .homePage()
                 .searchFor("hr");
         user
-                .validatePageTitle("")
+                .validatePageTitle("LinkedIn")
                 .searchPage()
                 .verifyEachResultContains("hr");
     }

@@ -5,8 +5,6 @@ import net.thucydides.core.steps.ScenarioSteps;
 import org.junit.Assert;
 import pages.HomePage;
 
-import static org.hamcrest.CoreMatchers.is;
-
 public class HomeSteps extends ScenarioSteps {
     private HomePage homePage;
 

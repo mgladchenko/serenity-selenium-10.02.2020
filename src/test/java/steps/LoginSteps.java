@@ -15,7 +15,6 @@ public class LoginSteps extends ScenarioSteps {
     public LoginSteps login(String userEmail, String userPassword) {
         landingPage.open();
         landingPage.login(userEmail, userPassword);
-        waitABit(60000);
         return this;
     }
 

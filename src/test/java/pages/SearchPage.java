@@ -6,6 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class SearchPage extends PageObject {
@@ -23,6 +24,15 @@ public class SearchPage extends PageObject {
         } catch (TimeoutException e) {
             return false;
         }
+    }
+
+    public List<String> getSearchResultsList() {
+        List<String> searchResultsList = new ArrayList<>();
+        for (WebElement searchResult : searchResults) {
+            evaluateJavascript("arguments[0].scrollIntoView(true);", searchResult);
+            searchResultsList.add(searchResult.getText());
+        }
+        return searchResultsList;
     }
 
 
