@@ -11,6 +11,7 @@ public class LoginTest extends BaseTest {
     public void negativeLoginTest() {
         user
                 .auth()
+                .openLandingPage()
                 .login("a@b.c", "P@ssword123")
                 .validatePageHeader("Don't miss your next opportunity. Sign in to stay updated on your professional world.");
     }

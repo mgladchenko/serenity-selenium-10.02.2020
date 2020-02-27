@@ -8,6 +8,7 @@ import pages.SearchPage;
 
 import java.util.List;
 
+import static org.hamcrest.CoreMatchers.anyOf;
 import static org.hamcrest.CoreMatchers.containsString;
 
 public class SearchSteps extends ScenarioSteps {
@@ -17,6 +18,13 @@ public class SearchSteps extends ScenarioSteps {
     public SearchSteps verifyEachResultContains(String searchTerm) {
         List<String> searchResultsList = searchPage.getSearchResultsList();
         Assert.assertThat("SearchTerm not found.", searchResultsList, Every.everyItem(containsString(searchTerm)));
+        return this;
+    }
+
+    @Step
+    public SearchSteps verifyEachResultContains(String[] searchTerm) {
+        List<String> searchResultsList = searchPage.getSearchResultsList();
+        //Assert.assertThat("SearchTerm not found.", searchResultsList, Every.everyItem(containsString(anyOf(searchTerm))));
         return this;
     }
 
