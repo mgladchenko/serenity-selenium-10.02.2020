@@ -13,8 +13,11 @@
         <jbehave.version>1.46.0</jbehave.version>
         <selenium.version>3.141.59</selenium.version>
         <webdrivermanager.version>3.8.1</webdrivermanager.version>
+        <mysql.version>8.0.19</mysql.version>
+
         <maven.compiler.plugin.version>3.7.0</maven.compiler.plugin.version>
         <surefire.version>2.20</surefire.version>
+
         <source.encoding>UTF-8</source.encoding>
         <java.version>8</java.version>
         <test.name>*</test.name>
@@ -46,6 +49,11 @@
             <artifactId>webdrivermanager</artifactId>
             <version>${webdrivermanager.version}</version>
             <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>${mysql.version}</version>
         </dependency>
     </dependencies>
 
