@@ -1,0 +1,1 @@
+INSERT INTO pet VALUES ('Dog','John','red','m','2001-02-20', CURRENT_TIMESTAMP);
